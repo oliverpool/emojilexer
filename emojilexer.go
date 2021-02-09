@@ -1,7 +1,15 @@
 package twemoji
 
+// Lexer splits the text and the emojis from s.
+type Lexer func(s string, text func(string), emoji func(string))
+
+// FakeLexer simply calls text(s)
+func FakeLexer(s string, text func(string), emoji func(string)) {
+	text(s)
+}
+
 // NewLexer splits the text and the provided emojis from s.
-func NewLexer(emojis []string) func(s string, text func(string), emoji func(string)) {
+func NewLexer(emojis []string) Lexer {
 	root := newTree(emojis)
 
 	return func(s string, text func(string), emoji func(string)) {
