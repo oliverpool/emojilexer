@@ -5,6 +5,7 @@ import (
 	"strings"
 )
 
+// FromHexString parses a dash-separated hexadecimal string to a string.
 func FromHexString(s string) (string, error) {
 	if s == "" {
 		return "", nil
@@ -20,6 +21,7 @@ func FromHexString(s string) (string, error) {
 	return bb.String(), nil
 }
 
+// ToHexString format a string as dash-separated hexadecimal string.
 func ToHexString(s string) string {
 	var bb strings.Builder
 	for _, r := range s {

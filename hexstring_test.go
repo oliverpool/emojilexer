@@ -1,10 +1,21 @@
 package twemoji
 
 import (
+	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/require"
 )
+
+func ExampleFromHexString() {
+	fmt.Println(FromHexString("1f3c3-200d-2640-fe0f"))
+	// Output: 🏃‍♀️ <nil>
+}
+
+func ExampleToHexString() {
+	fmt.Println(ToHexString("🏃‍♀️"))
+	// Output: 1f3c3-200d-2640-fe0f
+}
 
 func FromHexStringMust(t *testing.T, s string) string {
 	out, err := FromHexString(s)

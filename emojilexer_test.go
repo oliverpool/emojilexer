@@ -9,11 +9,14 @@ import (
 )
 
 func Example() {
+	// List the supported emojis
 	lexer := NewLexer([]string{
 		"🤩",
 		"🥳",
 		"🏃‍♀️",
 	})
+
+	// And lex your input
 	input := `Some text with emojis:🤩🥳...` +
 		`Some unsupported emojis as well: 🤠💩🏃‍♀️(the last one is supported)`
 	lexer(input, func(s string) {
@@ -21,6 +24,7 @@ func Example() {
 	}, func(s string) {
 		fmt.Println("EMOJI:", s)
 	})
+
 	// Output:
 	// TEXT: Some text with emojis:
 	// EMOJI: 🤩
