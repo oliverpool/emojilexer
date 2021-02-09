@@ -1,4 +1,4 @@
-package twemoji
+package emojilexer
 
 import (
 	"strconv"

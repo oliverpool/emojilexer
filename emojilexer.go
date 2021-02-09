@@ -1,4 +1,4 @@
-package twemoji
+package emojilexer
 
 // Lexer splits the text and the emojis from s.
 type Lexer func(s string, text func(string), emoji func(string))
